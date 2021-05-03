@@ -11,7 +11,7 @@
                         <div class="col-xl-4 col-lg-4">
                             <div class="logo">
                                 <a href="index.html">
-                                    <img src="img/logo.png" alt="">
+                                    <img src="storage/{{$config_geral->first()->logo}}" alt="">
                                 </a>
                             </div>
                         </div>
@@ -19,15 +19,15 @@
                             <div class="header_right d-flex align-items-center">
                                 <div class="short_contact_list">
                                     <ul>
-                                        @foreach ($contatos as $contato)
-                                            <li><a href="mailto:{{$contato->email}}"> <i class="fa fa-envelope" style="color: #009CDE;"></i>{{$contato->email}}</a></li>
-                                            <li><a href="tel:{{$contato->telefone}}"> <i class="fa fa-phone" style="color: #009CDE;"></i> {{$contato->telefone}}</a></li>                                          
+                                        @foreach ($config_geral as $config)
+                                            <li><a href="mailto:{{$config->email}}"> <i class="fa fa-envelope" style="color: #009CDE;"></i>{{$config->email}}</a></li>
+                                            <li><a href="tel:{{$config->telefone}}"> <i class="fa fa-phone" style="color: #009CDE;"></i> {{$config->telefone}}</a></li>                                          
                                         @endforeach
                                     </ul>
                                 </div>
 
                                 <div class="book_btn d-none d-lg-block">
-                                    <a class="boxed-btn3-line" href="{{$contatos->first()->url_botao}}">{{$contatos->first()->titulo_botao}}</a>
+                                    <a class="boxed-btn3-line" href="{{$config->first()->url_botao}}">{{$config->first()->titulo_botao}}</a>
                                     
                                 </div>
                             </div>
@@ -169,6 +169,44 @@
             </div>
         </div> 
 </div>
+@endsection
+
+
+@section('contatos_2')
+    <div class="contact_location">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                    <div class="location_left">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="storage/{{$config_geral->first()->logo}}" alt="">
+                            </a>
+                        </div>
+                        <ul>
+                            <li><a href="{{$config_geral->first()->url_facebook}}"> <i class="fa fa-facebook"></i> </a></li>
+                            <li><a href="{{$config_geral->first()->url_instagram}}"> <i class="fa fa-instagram"></i> </a></li>
+                            <li><a href="{{$config_geral->first()->url_twitter}}"> <i class="fa fa-twitter"></i> </a></li>
+                            <li><a href="{{$config_geral->first()->url_youtube}}"> <i class="fa fa-youtube"></i> </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-3">
+                    <div class="single_location">
+                        <h3> <img src="img/icon/address.svg" alt=""> Endereço</h3>
+                        <p>{{$config_geral->first()->endereco}}</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-3">
+                    <div class="single_location">
+                        <h3> <img src="img/icon/support.svg" alt=""> Contato</h3>
+                        <p>{{$config_geral->first()->telefone}}<br>
+                            {{$config_geral->first()->email}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 

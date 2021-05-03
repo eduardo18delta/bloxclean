@@ -24,23 +24,35 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th>Ordem</th>
+                    <th>id</th>
+                    <th>logo</th>
                     <th>Email</th>
                     <th>Telefone</th>
                     <th>Titulo Botão</th>  
                     <th>URL Botão</th> 
+                    <th>Endereço</th>
+                    <th>Facebook</th>
+                    <th>instagram</th>
+                    <th>Youtube</th>
+                    <th>Linkdin</th>
                     <th>Editar</th> 
                 </tr>                 
                 </thead>
                 <tbody>
-                    @foreach($contatos as $contato)
+                    @foreach($config_gerais as $config)
                         <tr>
-                            <td>{{$contato->id}}</td>
-                            <td>{{$contato->email}}</td>
-                            <td>{{$contato->telefone}}</td>
-                            <td>{{$contato->titulo_botao}}</td>
-                            <td>{{$contato->url_botao}}</td>
-                            <td><a class="btn btn-success" href="/admin/contato/editar/{{$contato->id}}">Editar</a></td>
+                            <td>{{$config->id}}</td>
+                            <td><img src="{{url("storage/$config->logo")}}" alt="" style="max-width: 150px;"></td>
+                            <td>{{$config->email}}</td>
+                            <td>{{$config->telefone}}</td>
+                            <td>{{$config->titulo_botao}}</td>
+                            <td>{{$config->url_botao}}</td>
+                            <td>{{$config->endereco}}</td>
+                            <td>{{$config->url_facebook}}</td>
+                            <td>{{$config->url_instagram}}</td>
+                            <td>{{$config->url_youtube}}</td>
+                            <td>{{$config->url_linkedin}}</td>
+                            <td><a class="btn btn-success" href="/admin/config_geral/editar/{{$config->id}}">Editar</a></td>
                         </tr>
                     @endforeach                    
                 </tbody>

@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BannerContatoController;
 use App\Http\Controllers\ServicosController;
-use App\Http\Controllers\ContatoController;
+use App\Http\Controllers\ConfigGeralController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ItensController;
 use App\Http\Controllers\AdminController;
@@ -20,11 +20,10 @@ Route::get('/admin/banner/listar' , [BannerContatoController::class , 'listar_ba
 Route::get('/admin/banner/editar/{id}' , [BannerContatoController::class , 'editar_banner'])->name('editar.banner');
 Route::put('/admin/banner/atualizar/{id}' , [BannerContatoController::class , 'update_banner'])->name('update.banner');
 
-
 // Rotas de CRUD informações de contato menu 
-Route::get('/admin/contato/listar' , [ContatoController::class , 'listar_contato'])->name('listar.contato');
-Route::get('/admin/contato/editar/{id}' , [ContatoController::class , 'editar_contato'])->name('editar.contato');
-Route::put('/admin/contato/atualizar/{id}' , [ContatoController::class , 'update_contato'])->name('update.contato');
+Route::get('/admin/config_geral/listar' , [ConfigGeralController::class , 'listar_contato'])->name('listar.geral');
+Route::get('/admin/config_geral/editar/{id}' , [ConfigGeralController::class , 'editar_contato'])->name('editar.geral');
+Route::put('/admin/config_geral/atualizar/{id}' , [ConfigGeralController::class , 'update_contato'])->name('update.geral');
 
 // Rotas de CRUD informações do MENU 
 Route::get('/admin/menu/listar' , [MenuController::class , 'listar_menu'])->name('listar.menu');
@@ -45,8 +44,6 @@ Route::put('/admin/servicos/atualizar/{id}' , [ServicosController::class , 'upda
 Route::get('/admin/itens/listar' , [ItensController::class , 'listar_itens'])->name('listar.itens');
 Route::get('/admin/itens/editar/{id}' , [ItensController::class , 'editar_itens'])->name('editar.itens');
 Route::put('/admin/itens/atualizar/{id}' , [ItensController::class , 'update_itens'])->name('update.itens');
-
-
 
 
 

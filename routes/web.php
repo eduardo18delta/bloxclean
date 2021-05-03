@@ -6,3 +6,4 @@ use Illuminate\Support\Facades\Route;
 // Rota da HomePage do site BoxClean
 Route::get('/' , [HomePageController::class, 'index']);
 
+

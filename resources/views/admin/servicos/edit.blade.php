@@ -33,7 +33,8 @@
         </div>
         <div class="form-group">
             <label>Imagem:</label>            
-            <input class="form-control" type="file" name="image">                            
+            <input class="form-control" type="file" name="image">   
+            <small>Tamanho Recomendado: 362x258</small>                         
         </div>
         <div class="form-group">
             <label>Titulo Item:</label>

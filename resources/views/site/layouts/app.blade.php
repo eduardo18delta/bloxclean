@@ -61,6 +61,11 @@
     <!-- contact_action_area  -->
          @yield('banner-contato')
     <!-- /contact_action_area  -->
+
+    <!-- contact_location  -->
+        @yield('contatos_2')
+    <!--/ contact_location  -->
+
     <!-- footer_area -->
         @yield('footer')
     <!-- footer_area -->

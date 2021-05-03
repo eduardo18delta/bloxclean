@@ -302,12 +302,12 @@ return [
             ],
         ],
         [
-            'text'    => 'Contato',
+            'text'    => 'Configurações Gerais',
             'icon'    => 'fas fa-id-card',
             'submenu' => [
                 [
                     'text' => 'Exibir Contatos',
-                    'url'  => 'admin/contato/listar',
+                    'url'  => '/admin/config_geral/listar',
                 ],
             ],
         ],
