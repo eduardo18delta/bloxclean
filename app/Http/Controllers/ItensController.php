@@ -41,7 +41,7 @@ class ItensController extends Controller
 
         $nameFile = Str::of($request->titulo_icone)->slug('-') . '.' . $request->icone->getClientOriginalExtension();
 
-        $image = $request->icone->storeAs('servicos', $nameFile);
+        $image = $request->icone->storeAs('itens', $nameFile);
         $data['icone'] = $image;
 
         $itens->update($data);
