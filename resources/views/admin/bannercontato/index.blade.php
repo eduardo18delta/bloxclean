@@ -23,6 +23,7 @@
     @endif
 
     <div class="container-fluid">
+
         <div class="row">
             <table class="table table-striped table-bordered">
                 <thead>
@@ -48,6 +49,10 @@
                     @endforeach                    
                 </tbody>
             </table>
+        </div>
+
+        <div class="row">            
+            <a href="{{url('/#contact_action_area')}}" class="btn btn-success">Veja em tempo real</a>            
         </div>
 
     </div>

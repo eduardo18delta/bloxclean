@@ -99,7 +99,7 @@
 
 
 @section('itens-mid')
-    <div class="container">
+    <div id="itens_home" class="container">
         <div class="row">
             @foreach ($itens as $item)
             <div class="col-xl-4 col-lg-4 col-md-6">
@@ -120,7 +120,7 @@
 
 
 @section('servicos')
-    <div class="container">
+    <div id="servicos_home" class="container">
         <div class="row">
             <div class="col-xl-12">
                 <div class="section_title mb-50 text-center">
@@ -152,7 +152,7 @@
 @endsection
 
 @section('banner-contato')
-<div class="contact_action_area" style="background-image: url(storage/{{$banner_contato->first()->imagem}})" >
+<div id="contact_action_area" class="contact_action_area" style="background-image: url(storage/{{$banner_contato->first()->imagem}})" >
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-7 col-md-6">
@@ -173,7 +173,7 @@
 
 
 @section('contatos_2')
-    <div class="contact_location">
+    <div id="contact_location" class="contact_location">
         <div class="container">
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-6">

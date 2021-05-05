@@ -45,6 +45,10 @@
             </table>
         </div>
 
+        <div class="row">            
+            <a href="{{url('/#itens_home')}}" class="btn btn-success">Veja em tempo real</a>            
+        </div>
+
     </div>
 
 
