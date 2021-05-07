@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-// Controller do CRUD dos Contatos na Home Page
+// Controller do CRUD dos Contatos na Home Page teste
 
 class ConfigGeralController extends Controller
 {
