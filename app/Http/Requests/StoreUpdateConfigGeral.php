@@ -25,16 +25,16 @@ class StoreUpdateConfigGeral extends FormRequest
     public function rules()
     {
         return [
-            'logo' => ['required' , 'max:2000', 'image'],            
+            'logo' => 'required|image|max:2000',        
             'email' => ['required' ,'min:10', 'max:160', 'email'],
             'telefone' => ['required' ,'min:10', 'max:160'],
             'titulo_botao' => ['required' ,'min:5', 'max:160'],
             'url_botao' => ['required' ,'min:4', 'max:160'],
             'endereco' => ['required' ,'min:4', 'max:160'],
-            'url_facebook' => ['required' ,'min:4', 'max:160'],
-            'url_instagram' => ['required' ,'min:4', 'max:160'],
-            'url_twitter' => ['required' ,'min:4', 'max:160'],
-            'url_youtube' => ['required' ,'min:4', 'max:160'],
+            'url_facebook' => ['min:1', 'max:160'],
+            'url_instagram' => ['min:1', 'max:160'],
+            'url_twitter' => ['min:1', 'max:160'],
+            'url_youtube' => ['min:1', 'max:160'],
         ];
     }
 }

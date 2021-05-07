@@ -20,9 +20,11 @@
         @endif
     
 
-    <form action="{{route('update.geral' , $config_geral->id)}}" method="post">
+    <form action="{{route('update.geral' , $config_geral->id)}}" method="post" enctype="multipart/form-data">
         @csrf
-        @method('put')    
+        @method('put')
+        
+ 
 
 <div class="row">
 

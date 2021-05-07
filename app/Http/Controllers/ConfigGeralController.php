@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreUpdateConfigGeral;
 use App\Models\ConfigGeral;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 // Controller do CRUD dos Contatos na Home Page
 
@@ -25,16 +27,25 @@ class ConfigGeralController extends Controller
     public function update_contato(StoreUpdateConfigGeral $request, $id)
     {
 
-
-
         if (!$config_geral = ConfigGeral::find($id)) {
             return redirect()->back();
         }
 
-        $config_geral->update($request->all());
+        $data = $request->all();
+
+        if ($request->logo->isValid())
+            if (Storage::exists($config_geral->logo))
+                Storage::delete($config_geral->logo);
+
+        $nameFile = Str::of("logo")->slug('-') . '.' . $request->logo->getClientOriginalExtension();        
+
+        $image = $request->logo->storeAs('logo', $nameFile);
+        $data['logo'] = $image;
+
+        $config_geral->update($data);
 
         return redirect()
-            ->route('listar.contato')
-            ->with('message', 'Atualizado com sucesso');
+            ->route('listar.geral')
+            ->with('message', 'Atualizado com sucesso');                  
     }
 }
